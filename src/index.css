@@ -1,14 +1,323 @@
-body {
+body,
+main {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'lobster', 'cursive';
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://imgur.com/MC70IJj.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+  text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+/* NAVBAR STYLING */
+
+.navbar {
+  overflow: hidden;
+  background-color: lightblue;
+  height: 5em;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: black;
+  font-family: 'Poiret One', 'cursive';
+  font-size: 2em;
+  font-weight: bolder;
+  text-align: center;
+  padding: 0.02em 0.3em;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  color: deeppink;
+  text-decoration-line: none;
+}
+
+/* LANDING STYLING */
+
+.main-title {
+  height: 28em;
+  background-image: url(https://imgur.com/5j9dQzp.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: lightblue;
+  text-shadow: deeppink 0.2em 0.2em;
+}
+
+.main-title h1 {
+  font-size: 3em;
+  padding-top: 4em;
+  letter-spacing: 0.2em;
+}
+
+.point-description,
+.point-title {
+  color: black;
+}
+
+.selling-points {
+  background-color: transparent;
+}
+
+.landing-image {
+  margin: 10px auto 10px;
+  height: 3em;
+}
+
+.point-title {
+  font-size: 1.6em;
+  letter-spacing: 0.1em;
+  height: 60px;
+  vertical-align: middle;
+  font-family: 'Lobster', 'cursive';
+  font-weight: bolder;
+  padding-top: 2em;
+}
+
+.point-description {
+  padding-top: 2.5em;
+  font-size: 1.2em;
+  font-family: 'Poiret One', 'cursive';
+  font-weight: bolder;
+}
+
+/* LIBRARY STYLING */
+
+.library-item h3 {
+  font-size: 1.5em;
+  letter-spacing: 0.04em;
+  color: black;
+  font-family: 'Lobster', 'cursive';
+  margin-top: 5px;
+  padding-bottom: 20px;
+}
+
+.library-item h5 {
+  color: black;
+  font-size: 1.2em;
+  font-family: 'Lobster', 'cursive';
+  letter-spacing: 0.05em;
+  margin-top: -14px;
+  padding-bottom: 20px;
+}
+
+.library-item p {
+  color: black;
+  font-family: 'Concert One', 'cursive';
+  margin-top: -15px;
+}
+
+.library-image {
+  height: 13em;
+  padding-top: 3em;
+  width: 10em;
+}
+
+#artist-info:hover {
+  color: deeppink;
+}
+
+/* TABLE STYLING */
+
+.track-list {
+  background-color: transparent;
+  border: none;
+  font-family: 'Baloo Chettan', cursive;
+  height: 50em;
+  position: fixed;
+  padding-top: 1em;
+  opacity: 1;
+  overflow: hidden;
+  bottom: 2em;
+  top: 1em;
+  width: 30em;
+  text-align: center;
+  color: black;
+  border-radius: 2em;
+}
+tr:hover .fa-play {
+  display: block;
+}
+
+tr .fa-play,
+tr:hover .song-number {
+  display: none;
+}
+
+.play-pause-button {
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 10%;
+  height: 2em;
+  line-height: 30px;
+  padding: 0px 0px 1px 0;
+  width: 2em;
+}
+
+.play-pause-button:hover {
+  border: 2px solid deeppink;
+}
+
+#buttons button {
+  background-color: transparent;
+  height: 2.7em;
+  width: 2.7em;
+  margin-top: 10em;
+  border-radius: 10%;
+  margin: 0.3em;
+  font-size: 1em;
+  line-height: 2em;
+  padding-top: 1em;
+  border: 2px solid black;
+  text-align: center;
+}
+
+#buttons button:hover {
+  border: 2px solid deeppink;
+}
+
+/* ALBUM INFO STYLING */
+
+.album-info,
+.album-info h1,
+.album-info h2,
+.player-controls {
+  font-family: 'Baloo Chettan', cursive;
+  font-size: '1.3em';
+  padding-bottom: 0.5em;
+}
+
+.album-info {
+  padding-top: 2em;
+}
+
+.album-info h1 {
+  font-size: 3em;
+  letter-spacing: 0.1em;
+  margin-bottom: -15px;
+}
+
+.album-info h2 {
+  font-size: 1.8em;
+  letter-spacing: 0.1em;
+  margin-bottom: -15px;
+}
+
+#album-cover-art {
+  height: 15em;
+  padding-top: 2em;
+  width: 15em;
+}
+
+#release-info {
+  padding-bottom: 20px;
+}
+
+/* PLAYER BAR STYLING */
+
+.album-player {
+  background-color: lightblue;
+  border: solid black 0.1em;
+  font-family: 'Baloo Chettan', cursive;
+  height: 40em;
+  position: fixed;
+  padding-bottom: 12em;
+  opacity: 1;
+  overflow: hidden;
+  bottom: 2em;
+  top: 1em;
+  width: 30em;
+  text-align: center;
+  color: black;
+  border-radius: 2em;
+}
+
+.song-info-and-play-controls {
+  text-align: center;
+  padding-left: 1em;
+}
+
+i#controls {
+  text-align: center;
+  font-size: 1em;
+}
+
+button#previous {
+  font-size: 1em;
+  padding: 0;
+}
+
+button#play-pause {
+  font-size: 1em;
+  padding: 0;
+}
+
+button#next {
+  font-size: 1em;
+  padding: 0;
+}
+
+.sliders {
+  padding-top: 0.7em;
+}
+
+/* VOLUME AND TIME POSITION SLIDER STYLING */
+
+.seek-bar {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 0.7em;
+  background: black;
+  outline: none;
+  opacity: 0.85;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  margin: 0px 10px;
+}
+
+.seek-bar:hover {
+  opacity: 1;
+}
+
+.seek-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0.8em;
+  height: 0.8em;
+  background: deeppink;
+  cursor: pointer;
+}
+
+.seek-bar::-moz-range-thumb {
+  width: 2em;
+  height: 2em;
+  background: deeppink;
+  cursor: pointer;
+}
+
+input[type='range'] {
+  width: 100%;
+}
+
+#buttons {
+  display: block;
+  font-size: 1.2em;
+}
+
+.sliders {
+  display: center;
+  padding: -3px;
 }
