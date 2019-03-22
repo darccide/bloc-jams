@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
-import { Table } from 'reactstrap';
 import PlayerBar from './PlayerBar';
 
 class Album extends Component {
@@ -179,59 +178,65 @@ class Album extends Component {
           </div>
           <div className="track-list col-sm-12 col-md-6">
             {/* RENDER SONG LIST TABLE */}
-            <Table responsive id="song-list" muted>
-              <thead>
-                <tr>
-                  <th>Track</th>
-                  <th>Title</th>
-                  <th>Length</th>
-                </tr>
-              </thead>
-              <colgroup>
-                <col id="song-number-column" />
-                <col id="song-title-column" />
-                <col id="song-duration-column" />
-              </colgroup>
-              <tbody>
-                {/* MAPPING SONG INFO */}
-                {this.state.album.songs.map((song, index) => (
-                  <tr
-                    className="song"
-                    key={index}
-                    onClick={() => this.handleSongClick(song)}
-                  >
-                    <td className="song-actions">
-                      <button className="play-pause-button">
-                        <span className="song-number">
-                          {this.songState(song) ||
-                          (!this.state.isPlaying &&
-                            song === this.state.currentSong &&
-                            this.state.currentTIme > 0) ? (
-                            !this.state.isPlaying ? (
-                              <i className="fas fa-play" />
-                            ) : (
-                              ''
-                            )
-                          ) : (
-                            index + 1
-                          )}
-                        </span>
-                        <i
-                          className={this.songState(song) ? '' : 'fas fa-play'}
-                        />
-                        <i
-                          className={this.songState(song) ? 'fas fa-pause' : ''}
-                        />
-                      </button>
-                    </td>
-                    <td className="song-title">{song.title}</td>
-                    <td className="song-duration">
-                      {this.formatTime(song.duration)}
-                    </td>
+            <div className="table-responsive">
+              <table className="table" id="song-list">
+                <thead>
+                  <tr>
+                    <th>Track</th>
+                    <th>Title</th>
+                    <th>Length</th>
                   </tr>
-                ))}
-              </tbody>
-            </Table>
+                </thead>
+                <colgroup>
+                  <col id="song-number-column" />
+                  <col id="song-title-column" />
+                  <col id="song-duration-column" />
+                </colgroup>
+                <tbody>
+                  {/* MAPPING SONG INFO */}
+                  {this.state.album.songs.map((song, index) => (
+                    <tr
+                      className="song"
+                      key={index}
+                      onClick={() => this.handleSongClick(song)}
+                    >
+                      <td className="song-actions">
+                        <button className="play-pause-button">
+                          <span className="song-number">
+                            {this.songState(song) ||
+                            (!this.state.isPlaying &&
+                              song === this.state.currentSong &&
+                              this.state.currentTIme > 0) ? (
+                              !this.state.isPlaying ? (
+                                <i className="fas fa-play" />
+                              ) : (
+                                ''
+                              )
+                            ) : (
+                              index + 1
+                            )}
+                          </span>
+                          <i
+                            className={
+                              this.songState(song) ? '' : 'fas fa-play'
+                            }
+                          />
+                          <i
+                            className={
+                              this.songState(song) ? 'fas fa-pause' : ''
+                            }
+                          />
+                        </button>
+                      </td>
+                      <td className="song-title">{song.title}</td>
+                      <td className="song-duration">
+                        {this.formatTime(song.duration)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
-import './App.css';
+
 import Library from './components/Library';
 import Landing from './components/Landing';
 import Album from './components/Album';
 import Logo from './data/images/bloc_jams_logo.png';
+
+import './App.css';
+import './index.css';
 
 class App extends Component {
   render() {
