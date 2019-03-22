@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import './App.css';
 import Library from './components/Library';
 import Landing from './components/Landing';
@@ -12,16 +12,16 @@ class App extends Component {
       <div className="App-container">
         <div className="App-header">
           <div className="navbar fixed-top">
-            <a href="/" className="navbar-brand">
+            <Link to="/" className="navbar-brand">
               <img
                 src={Logo}
                 alt="Bloc Jams Logo"
                 style={{ height: '2.2em' }}
               />
-            </a>
-            <a href="/Library" className="library-link">
+            </Link>
+            <Link to="/Library" className="library-link">
               Library
-            </a>
+            </Link>
           </div>
         </div>
         <main>
