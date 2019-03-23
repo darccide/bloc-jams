@@ -141,7 +141,7 @@ main {
   opacity: 1;
   overflow: hidden;
   bottom: 2em;
-  top: 1em;
+  top: 6em;
   width: 30em;
   text-align: center;
   color: black;
@@ -237,7 +237,7 @@ tr:hover .song-number {
   opacity: 1;
   overflow: hidden;
   bottom: 2em;
-  top: 1em;
+  top: 6em;
   width: 30em;
   text-align: center;
   color: black;
