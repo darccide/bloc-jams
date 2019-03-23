@@ -1,18 +1,20 @@
 {
   "name": "bloc-jams",
   "version": "0.1.0",
-  "private": true,
+  "homepage": "https://darccide.github.io/bloc-jams",
   "dependencies": {
-    "bootstrap": "^4.3.1",
-    "kleur": "^3.0.2",
-    "radium": "^0.25.1",
+    "gh-pages": "^2.0.1",
+    "jquery": "^1.9.1",
+    "popper.js": "^1.14.7",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
-    "reactstrap": "^7.1.0"
+    "typescript": "^3.3.4000"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
