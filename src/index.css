@@ -136,13 +136,12 @@ main {
   border: none;
   font-family: 'Baloo Chettan', cursive;
   height: 50em;
-  position: fixed;
-  padding-top: 1em;
+  padding-top: 3em;
   opacity: 1;
   overflow: hidden;
-  bottom: 2em;
-  top: 6em;
-  width: 30em;
+  bottom: 10em;
+  top: 8em;
+  width: 100%;
   text-align: center;
   color: black;
   border-radius: 2em;
@@ -232,13 +231,13 @@ tr:hover .song-number {
   border: solid black 0.1em;
   font-family: 'Baloo Chettan', cursive;
   height: 40em;
-  position: fixed;
   padding-bottom: 12em;
+  position: relative;
   opacity: 1;
   overflow: hidden;
   bottom: 2em;
-  top: 6em;
-  width: 30em;
+  top: 3em;
+  width: 100%;
   text-align: center;
   color: black;
   border-radius: 2em;
@@ -320,4 +319,9 @@ input[type='range'] {
 .sliders {
   display: center;
   padding: -3px;
+}
+@media screen and (max-width: 600px) {
+  .album-player .track-list {
+    width: 100%;
+  }
 }

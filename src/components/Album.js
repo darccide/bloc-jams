@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
+import { Table } from 'reactstrap';
 
 class Album extends Component {
   constructor(props) {
@@ -136,12 +137,12 @@ class Album extends Component {
   // RENDER ALBUM/TRACKS/PLAYER
   render() {
     return (
-      <div className="container album-component">
-        <div className="row album-info">
-          <div className="col-sm-12 col-md-6">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-6">
             <div className="album-player">
               {/* RENDER ALBUM ART */}
-              <section id="album-info">
+              <div id="album-info">
                 <img
                   id="album-cover-art"
                   src={this.state.album.albumCover}
@@ -152,94 +153,89 @@ class Album extends Component {
                   <h2 className="artist">{this.state.album.artist}</h2>
                   <div id="release-info">{this.state.album.releaseInfo}</div>
                 </div>
-              </section>
-              <div className="container player">
-                <div className="row">
-                  <div className="col-12">
-                    {/* RENDER PLAYER BAR */}
-                    <PlayerBar
-                      isPlaying={this.state.isPlaying}
-                      currentSong={this.state.currentSong}
-                      volume={this.state.volume}
-                      album={this.state.album}
-                      currentTime={this.audioElement.currentTime}
-                      duration={this.audioElement.duration}
-                      handleSongClick={() =>
-                        this.handleSongClick(this.state.currentSong)
-                      }
-                      handlePrevClick={() => this.handlePrevClick()}
-                      handleNextClick={() => this.handleNextClick()}
-                      handleTimeChange={e => this.handleTimeChange(e)}
-                      handleVolumeChange={e => this.handleVolumeChange(e)}
-                      formatTime={e => this.formatTime(e)}
-                    />
-                  </div>
-                </div>
+
+                {/* RENDER PLAYER BAR */}
+                <PlayerBar
+                  isPlaying={this.state.isPlaying}
+                  currentSong={this.state.currentSong}
+                  volume={this.state.volume}
+                  album={this.state.album}
+                  currentTime={this.audioElement.currentTime}
+                  duration={this.audioElement.duration}
+                  handleSongClick={() =>
+                    this.handleSongClick(this.state.currentSong)
+                  }
+                  handlePrevClick={() => this.handlePrevClick()}
+                  handleNextClick={() => this.handleNextClick()}
+                  handleTimeChange={e => this.handleTimeChange(e)}
+                  handleVolumeChange={e => this.handleVolumeChange(e)}
+                  formatTime={e => this.formatTime(e)}
+                />
               </div>
             </div>
           </div>
-          <div className="col-sm-12 col-md-6">
+
+          <div className="col-12 col-md-6">
             <div className="track-list">
               {/* RENDER SONG LIST TABLE */}
-              <div className="table-responsive">
-                <table className="table" id="song-list">
-                  <thead>
-                    <tr>
-                      <th>Track</th>
-                      <th>Title</th>
-                      <th>Length</th>
-                    </tr>
-                  </thead>
-                  <colgroup>
-                    <col id="song-number-column" />
-                    <col id="song-title-column" />
-                    <col id="song-duration-column" />
-                  </colgroup>
-                  <tbody>
-                    {/* MAPPING SONG INFO */}
-                    {this.state.album.songs.map((song, index) => (
-                      <tr
-                        className="song"
-                        key={index}
-                        onClick={() => this.handleSongClick(song)}
-                      >
-                        <td className="song-actions">
-                          <button className="play-pause-button">
-                            <span className="song-number">
-                              {this.songState(song) ||
-                              (!this.state.isPlaying &&
-                                song === this.state.currentSong &&
-                                this.state.currentTIme > 0) ? (
-                                !this.state.isPlaying ? (
-                                  <i className="fas fa-play" />
-                                ) : (
-                                  ''
-                                )
+
+              <Table id="song-list">
+                <thead>
+                  <tr>
+                    <th>Track</th>
+                    <th>Title</th>
+                    <th>Length</th>
+                  </tr>
+                </thead>
+                <colgroup>
+                  <col id="song-number-column" />
+                  <col id="song-title-column" />
+                  <col id="song-duration-column" />
+                </colgroup>
+                <tbody>
+                  {/* MAPPING SONG INFO */}
+                  {this.state.album.songs.map((song, index) => (
+                    <tr
+                      className="song"
+                      key={index}
+                      onClick={() => this.handleSongClick(song)}
+                    >
+                      <td className="song-actions">
+                        <button className="play-pause-button">
+                          <span className="song-number">
+                            {this.songState(song) ||
+                            (!this.state.isPlaying &&
+                              song === this.state.currentSong &&
+                              this.state.currentTIme > 0) ? (
+                              !this.state.isPlaying ? (
+                                <i className="fas fa-play" />
                               ) : (
-                                index + 1
-                              )}
-                            </span>
-                            <i
-                              className={
-                                this.songState(song) ? '' : 'fas fa-play'
-                              }
-                            />
-                            <i
-                              className={
-                                this.songState(song) ? 'fas fa-pause' : ''
-                              }
-                            />
-                          </button>
-                        </td>
-                        <td className="song-title">{song.title}</td>
-                        <td className="song-duration">
-                          {this.formatTime(song.duration)}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                                ''
+                              )
+                            ) : (
+                              index + 1
+                            )}
+                          </span>
+                          <i
+                            className={
+                              this.songState(song) ? '' : 'fas fa-play'
+                            }
+                          />
+                          <i
+                            className={
+                              this.songState(song) ? 'fas fa-pause' : ''
+                            }
+                          />
+                        </button>
+                      </td>
+                      <td className="song-title">{song.title}</td>
+                      <td className="song-duration">
+                        {this.formatTime(song.duration)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
             </div>
           </div>
         </div>
