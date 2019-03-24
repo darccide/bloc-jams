@@ -175,7 +175,7 @@ export default [
     title: 'Get Lucky',
     artist: 'The Gamblers',
     releaseInfo: '2013 - Fremont Records',
-    albumCover: 'https://imgur.com/1mIi9jR.jpg',
+    albumCover: 'https://imgur.com/ibAOvn6.jpg',
     slug: 'looking-to-get-lucky',
     songs: [
       { title: 'Blue', duration: '161.71', audioSrc: '/assets/music/blue.mp3' },
