@@ -26,10 +26,8 @@ about managing state and props, while building a responsive webpage.
 
 ### Mobile Views
 
-<img src="https://imgur.com/vQpZrSk.jpg" alt="Bloc-Jams Mobile View Home Screenshot One" width="300" height="500" />
-<img src="https://imgur.com/BO8sgxq.jpg" alt="Bloc-Jams Mobile View Library Screenshot" width="300" height="500" />
-<img src="https://imgur.com/frodwe2.jpg" alt="Bloc-Jams Mobile View Album Player Screenshot One" width="300" height="500" />
-<img src="https://imgur.com/dCqBMEt.jpg" alt="Bloc-Jams Mobile View Album Player Track List Screenshot" width="300" height="500" />
+<!-- prettier-ignore -->
+<img src="https://imgur.com/vQpZrSk.jpg" alt="Bloc-Jams Mobile View Home Screenshot One" width="300" height="500" /> <img src="https://imgur.com/BO8sgxq.jpg" alt="Bloc-Jams Mobile View Library Screenshot" width="300" height="500" /> <img src="https://imgur.com/frodwe2.jpg" alt="Bloc-Jams Mobile View Album Player Screenshot One" width="300" height="500" /> <img src="https://imgur.com/dCqBMEt.jpg" alt="Bloc-Jams Mobile View Album Player Track List Screenshot" width="300" height="500" />
 
 ## Assignment Checkpoints and Build Steps
 
