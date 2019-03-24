@@ -174,7 +174,7 @@ export default [
   {
     title: 'Get Lucky',
     artist: 'The Gamblers',
-    releaseInfo: '2013 - Fremont Records',
+    releaseInfo: '2013 - Gangnam Records',
     albumCover: 'https://imgur.com/ibAOvn6.jpg',
     slug: 'looking-to-get-lucky',
     songs: [
