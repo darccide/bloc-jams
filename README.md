@@ -94,6 +94,7 @@ U.S. If you would like to contact him:
 
 - steven.thomson88@gmail.com
 - [Steven Thomson's LinkedIn](https://www.linkedin.com/in/steventhomson1988/)
+- [Steven Thomson's Portfolio](https://www.steven-thomson.com/)
 
 ## Acknowledgements
 
